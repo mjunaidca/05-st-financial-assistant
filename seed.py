@@ -3,6 +3,7 @@ import requests
 import os
 from openai import OpenAI
 from dotenv import load_dotenv, find_dotenv
+import streamlit as st
 
 _ : bool = load_dotenv(find_dotenv()) # read local .env file
 
@@ -10,9 +11,16 @@ INSTRUCTIONS = "Act as a financial analyst by accessing detailed financial data 
 
 FMP_API_KEY: str | None = os.environ.get("FMP_API_KEY")
 
+if not FMP_API_KEY:
+    st.sidebar.error("Please enter your OpenAI API Key")
+    st.stop()
+
+# Assert to satisfy Mypy's type checking - we have already added the check above but mypy doesn't know that!!!
+# This assertion will inform Mypy that beyond this point in the code, assistant_id cannot be None. Here's how you can do it:
+assert FMP_API_KEY is not None, "FMP_API_KEY must be set"
+
 # Defining Functions to Get Data from REST APIs
 # We are not using ~ period and limit parameters as the API Requires a Premium Account for these parameters
-
 
 def get_income_statement(ticker: str) -> str:
     url = f"https://financialmodelingprep.com/api/v3/income-statement/{ticker}?period=annual&apikey={FMP_API_KEY}"

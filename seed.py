@@ -15,43 +15,37 @@ FMP_API_KEY: str | None = os.environ.get("FMP_API_KEY")
 
 
 def get_income_statement(ticker: str) -> str:
-    url = f"https://financialmodelingprep.com/api/v3/income-statement/{
-        ticker}?period=annual&apikey={FMP_API_KEY}"
+    url = f"https://financialmodelingprep.com/api/v3/income-statement/{ticker}?period=annual&apikey={FMP_API_KEY}"
     response = requests.get(url)
     return json.dumps(response.json())
 
 
 def get_balance_sheet(ticker: str) -> str:
-    url = f"https://financialmodelingprep.com/api/v3/balance-sheet-statement/{
-        ticker}?period=annual&apikey={FMP_API_KEY}"
+    url = f"https://financialmodelingprep.com/api/v3/balance-sheet-statement/{ticker}?period=annual&apikey={FMP_API_KEY}"
     response = requests.get(url)
     return json.dumps(response.json())
 
 
 def get_cash_flow_statement(ticker: str) -> str:
-    url = f"https://financialmodelingprep.com/api/v3/cash-flow-statement/{
-        ticker}?period=annual&apikey=ETZqiw9M5ObXGLxKylHzoI5Ec70NQFue"
+    url = f"https://financialmodelingprep.com/api/v3/cash-flow-statement/{ticker}?period=annual&apikey=ETZqiw9M5ObXGLxKylHzoI5Ec70NQFue"
     response = requests.get(url)
     return json.dumps(response.json())
 
 
 def get_key_metrics(ticker: str) -> str:
-    url = f"https://financialmodelingprep.com/api/v3/key-metrics/{
-        ticker}?period=annual&apikey={FMP_API_KEY}"
+    url = f"https://financialmodelingprep.com/api/v3/key-metrics/{ticker}?period=annual&apikey={FMP_API_KEY}"
     response = requests.get(url)
     return json.dumps(response.json())
 
 
 def get_financial_ratios(ticker: str) -> str:
-    url = f"https://financialmodelingprep.com/api/v3/ratios-ttm/{
-        ticker}?period=annual&apikey={FMP_API_KEY}"
+    url = f"https://financialmodelingprep.com/api/v3/ratios-ttm/{ticker}?period=annual&apikey={FMP_API_KEY}"
     response = requests.get(url)
     return json.dumps(response.json())
 
 
 def get_financial_growth(ticker: str) -> str:
-    url = f"https://financialmodelingprep.com/api/v3/financial-growth/{
-        ticker}?period=annual&apikey={FMP_API_KEY}"
+    url = f"https://financialmodelingprep.com/api/v3/financial-growth/{ticker}?period=annual&apikey={FMP_API_KEY}"
     response = requests.get(url)
     return json.dumps(response.json())
 

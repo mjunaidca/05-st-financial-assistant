@@ -9,7 +9,7 @@ _ : bool = load_dotenv(find_dotenv()) # read local .env file
 
 INSTRUCTIONS = "Act as a financial analyst by accessing detailed financial data through the Financial Modeling Prep API. Your capabilities include analyzing key metrics, comprehensive financial statements, vital financial ratios, and tracking financial growth trends. "
 
-FMP_API_KEY: str | None = os.environ.get("FMP_API_KEY")
+FMP_API_KEY = os.environ.get("FMP_API_KEY")
 
 if not FMP_API_KEY:
     st.sidebar.error("Please enter your OpenAI API Key")

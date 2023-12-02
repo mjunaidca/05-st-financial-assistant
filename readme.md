@@ -8,8 +8,12 @@ Try it Out For:
 1. Getting Financials Comparision
 2. Plot Charts to see the Financials Comparision
 
-Inspired by the idea of building an AI financial analyst, this project integrates advanced AI capabilities to provide insightful financial information.
+Watch Live YouTube Video:
 
+[<img src="https://img.youtube.com/vi/LjS3lXFZT10/hqdefault.jpg" width="600" height="300"
+/>](https://www.youtube.com/embed/LjS3lXFZT10)
+
+Inspired by the idea of building an AI financial analyst, this project integrates advanced AI capabilities to provide insightful financial information.
 
 ### Try Prompts
 

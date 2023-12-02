@@ -1,6 +1,12 @@
 # Convert Step 09 Financial Analyst Project to Streamlit App
 
+###### This is a Multi Modal ChatGPT Application with Streamlit DALLE-3 Function Calling From Scratch
+
 "Financial-Analyst" is a simple financial analyst project leveraging REST APIs and OpenAI's Assistants API architecture to aid end users with financial analysis. 
+
+Try it Out For:
+1. Getting Financials Comparision
+2. Plot Charts to see the Financials Comparision
 
 Inspired by the idea of building an AI financial analyst, this project integrates advanced AI capabilities to provide insightful financial information.
 

@@ -79,16 +79,6 @@ if prompt := st.chat_input("compare last year financial health of Microsoft and 
         if message.run_id == run.id and message.role == "assistant"
     ]
 
-    # for message in assistant_message_in_run:
-    #     print('=================\n', message)
-
-    #     st.session_state.message.append({
-    #         "role": "assistant",
-    #         "content": message
-    #     })
-    #     with st.chat_message("assistant"):
-    #         st.markdown(message, unsafe_allow_html=True)
-
     for message in assistant_message_in_run:
 
         role_label = "User" if message.role == "user" else "Assistant"
@@ -108,8 +98,10 @@ if prompt := st.chat_input("compare last year financial health of Microsoft and 
             elif content.type == "image_file":
                 # Handle image file content, e.g., display the image
                 image_file_id = content.image_file.file_id
-                image_url = f"https://api.openai.com/v1/files/{image_file_id}/content"
-                headers = {"Authorization": f"Bearer {os.environ.get('OPENAI_API_KEY')}"}
+                image_url = f"https://api.openai.com/v1/files/{
+                    image_file_id}/content"
+                headers = {"Authorization": f"Bearer {
+                    os.environ.get('OPENAI_API_KEY')}"}
 
                 # Perform the HTTP GET request to download the image
                 response = requests.get(image_url, headers=headers)
@@ -117,6 +109,8 @@ if prompt := st.chat_input("compare last year financial health of Microsoft and 
                 # Check if the request was successful
                 if response.status_code == 200:
                     # Display the image
-                    st.image(response.content, caption=f"{role_label}: Image File ID: {image_file_id}", use_column_width=True)
+                    st.image(response.content, caption=f"{role_label}: Image File ID: {
+                             image_file_id}", use_column_width=True)
                 else:
-                    st.warning(f"Failed to download image: HTTP Status Code {response.status_code}")
+                    st.warning(f"Failed to download image: HTTP Status Code {
+                               response.status_code}")

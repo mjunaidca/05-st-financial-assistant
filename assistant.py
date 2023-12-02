@@ -19,7 +19,6 @@ _: bool = load_dotenv(find_dotenv())  # read local .env file
 
 client: OpenAI = OpenAI()
 
-
 class FinancialAssistantManager:
     def __init__(self, model: str = "gpt-3.5-turbo-1106"):
         self.client = OpenAI()
